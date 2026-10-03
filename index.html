@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crypto Demo</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: #f7f8fa;
+    color: #111827;
+}
+
+.header {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.demo-label {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 7px 10px;
+    border-radius: 20px;
+    background: #fff4cc;
+    color: #8a6100;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+.portfolio {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 25px;
+}
+
+.small {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.balance {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 8px 0;
+}
+
+.change {
+    color: #16803c;
+    font-weight: 600;
+}
+
+.chart {
+    height: 170px;
+    margin-top: 25px;
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+    overflow: hidden;
+}
+
+.chart svg {
+    width: 100%;
+    height: 100%;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.actions button {
+    flex: 1;
+    padding: 13px;
+    border: none;
+    border-radius: 9px;
+    background: #111827;
+    color: white;
+    font-weight: 600;
+}
+
+.assets {
+    margin-top: 25px;
+}
+
+.asset {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 17px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.asset-name {
+    font-weight: 650;
+}
+
+.asset-price {
+    text-align: right;
+}
+
+.editor {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 22px;
+    margin-top: 25px;
+}
+
+.editor h3 {
+    margin-top: 0;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.update {
+    width: 100%;
+    margin-top: 12px;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #111827;
+    color: white;
+    font-weight: 600;
+}
+
+.footer {
+    text-align: center;
+    color: #6b7280;
+    font-size: 12px;
+    padding: 30px;
+}
+
+@media (max-width: 600px) {
+    .balance {
+        font-size: 34px;
+    }
+
+    .actions {
+        flex-wrap: wrap;
+    }
+
+    .actions button {
+        min-width: 45%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">Crypto Demo</div>
+    <div class="demo-label">DEMO / TEST</div>
+</header>
+
+<main class="container">
+
+    <section class="portfolio">
+
+        <div class="small">Portfolio balance</div>
+
+        <div class="balance" id="balance">
+            $25,000.00
+        </div>
+
+        <div class="change">
+            +$1,240.00 (5.2%)
+        </div>
+
+        <div class="chart">
+            <svg viewBox="0 0 800 170" preserveAspectRatio="none">
+                <polyline
+                    points="0,145 80,125 150,135 230,90 310,110 390,70 470,85 550,45 630,65 710,30 800,45"
+                    fill="none"
+                    stroke="#111827"
+                    stroke-width="4"
+                />
+            </svg>
+        </div>
+
+        <div class="actions">
+            <button>Buy</button>
+            <button>Sell</button>
+            <button>Send</button>
+            <button>Receive</button>
+        </div>
+
+    </section>
+
+    <section class="assets">
+
+        <h2>Your assets</h2>
+
+        <div class="asset">
+            <div>
+                <div class="asset-name">Bitcoin</div>
+                <div class="small">BTC</div>
+            </div>
+
+            <div class="asset-price">
+                <strong>$10,000.00</strong>
+                <div class="small">0.150 BTC</div>
+            </div>
+        </div>
+
+        <div class="asset">
+            <div>
+                <div class="asset-name">Ethereum</div>
+                <div class="small">ETH</div>
+            </div>
+
+            <div class="asset-price">
+                <strong>$5,000.00</strong>
+                <div class="small">2.10 ETH</div>
+            </div>
+        </div>
+
+        <div class="asset">
+            <div>
+                <div class="asset-name">USD Coin</div>
+                <div class="small">USDC</div>
+            </div>
+
+            <div class="asset-price">
+                <strong>$10,000.00</strong>
+                <div class="small">10,000 USDC</div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="editor">
+
+        <h3>Demo Balance Editor</h3>
+
+        <div class="small">
+            Change the balance shown on this test dashboard.
+        </div>
+
+        <input
+            id="newBalance"
+            type="number"
+            placeholder="Enter demo balance"
+        >
+
+        <button class="update" onclick="updateBalance()">
+            Update Demo Balance
+        </button>
+
+    </section>
+
+</main>
+
+<div class="footer">
+    DEMO / TEST ACCOUNT — No real cryptocurrency or funds are stored.
+</div>
+
+<script>
+function updateBalance() {
+
+    const amount = document.getElementById("newBalance").value;
+
+    if (amount === "") {
+        alert("Please enter an amount.");
+        return;
+    }
+
+    document.getElementById("balance").textContent =
+        "$" + Number(amount).toLocaleString("en-US", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+}
+</script>
+
+</body>
+</html>
